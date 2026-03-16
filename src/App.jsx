@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const ALUMNI = [
-  { name: "Shourya Dwivedi", batch: 2016 },
-  { name: "Ravi Tiwari", batch: 2016 },
-  { name: "Soumodeep Mandal", batch: 2017 },
-  { name: "Harsh Vardhan Dubey", batch: 2018 },
-  { name: "Arun Kumar Nayak", batch: 2019 },
-  { name: "Abhinav Khare", batch: 2019 },
-  { name: "Ishan Gupta", batch: 2020 },
-  { name: "Ramashish Gupta", batch: 2020 },
+  { name: "Shourya Dwivedi", batch: 2020, amount: 2500 },
+  { name: "Ravi Tiwari", batch: 2020, amount: 2000 },
+  { name: "Soumodeep Mandal", batch: 2021, amount: 1000 },
+  { name: "Harsh Vardhan Dubey", batch: 2023, amount: 2000 },
+  { name: "Arun Kumar Nayak", batch: 2023, amount: 10000 },
+  { name: "Abhinav Khare", batch: 2023, amount: 5000 },
+  { name: "Abhishek Kumar Roy", batch: 2023, amount: 500 },
+  { name: "Ishan Gupta", batch: 2024, amount: 2000 },
+  { name: "Ramashish Gupta", batch: 2024, amount: 2000 },
+  { name: "Shiwani Kumari", batch: 2020, amount: 1000 },
+  { name: "Indarpal Khuntey", batch: 2020, amount: 1500 }
 ];
 
 function App() {
@@ -99,6 +102,7 @@ function App() {
                 />
               </div>
               <span className="qr-hint">UPI / any payment app</span>
+              <span className="qr-hint">10224333816@sbi</span>
             </div>
             <div className="bank-details">
               <h3>Bank details</h3>
@@ -139,12 +143,14 @@ function App() {
           <em>COMPOSIT 2026</em>
         </h2>
         <div className="alumni-grid">
-          {ALUMNI.map((alum, i) => (
-            <div className="alumni-card" key={i} style={{ animationDelay: `${i * 0.07}s` }}>
-              <span className="alumni-name">{alum.name}</span>
-              <span className="alumni-batch">Batch of {alum.batch}</span>
-            </div>
-          ))}
+          {[...ALUMNI]
+            .sort((a, b) => b.amount - a.amount || a.batch - b.batch || a.name.localeCompare(b.name))
+            .map((alum, i) => (
+              <div className="alumni-card" key={i} style={{ animationDelay: `${i * 0.07}s` }}>
+                <span className="alumni-name">{alum.name}</span>
+                <span className="alumni-batch">Batch of {alum.batch}</span>
+              </div>
+            ))}
         </div>
       </section>
 
