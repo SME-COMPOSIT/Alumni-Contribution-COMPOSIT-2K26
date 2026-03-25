@@ -15,7 +15,9 @@ const ALUMNI = [
   { name: "Indarpal Khuntey", batch: 2020, amount: 1500 },
   { name: "Abhishek Kumar", batch: 2017, amount: 5001 },
   { name: "Ankit Anuragi", batch: 2024, amount: 2000 },
-  { name: "Ayan Banerjee", batch: 2022, amount: 500 }
+  { name: "Ayan Banerjee", batch: 2022, amount: 500 },
+  { name: "Manan Kinjawadekar", batch: 2020, amount: 5001 },
+  { name: "Jayam Vamsi Krishna", batch: 2020, amount: 5000 }
 ];
 
 function App() {
